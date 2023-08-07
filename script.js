@@ -1,4 +1,4 @@
-/*script.js*/ 
+/*  script.js  */ 
 let startTime;
 let interval;
 let running = false;
