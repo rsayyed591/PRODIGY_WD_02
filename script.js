@@ -1,10 +1,9 @@
-/*  script.js  */ 
-let startTime;
+let startTime = 0;
 let interval;
 let running = false;
 let lapCounter = 0;
-let pausedTime = 0; 
 let accumulatedTime = 0;
+let pausedTime = 0;
 
 const display = document.getElementById('display');
 const startButton = document.getElementById('start');
@@ -20,7 +19,7 @@ lapButton.addEventListener('click', lap);
 
 function start() {
   if (!running) {
-    startTime = Date.now() - accumulatedTime;
+    startTime = Date.now() - (interval || 0); 
     interval = setInterval(updateDisplay, 10);
     running = true;
     startButton.disabled = true;
@@ -29,14 +28,12 @@ function start() {
 }
 
 function pause() {
-  if (running) {
-    clearInterval(interval);
-    accumulatedTime += Date.now() - startTime;
-    interval = null;
-    running = false;
-    startButton.disabled = false;
-    pauseButton.disabled = true;
-  }
+  clearInterval(interval);
+  interval = null;
+  running = false;
+  accumulatedTime += Date.now() - startTime; 
+  startButton.disabled = false;
+  pauseButton.disabled = true;
 }
 
 function reset() {
@@ -46,12 +43,14 @@ function reset() {
   display.textContent = '00:00:00';
   startButton.disabled = false;
   pauseButton.disabled = true;
+  lapCounter = 0;
   lapsList.innerHTML = '';
+  accumulatedTime = 0;
 }
 
 function updateDisplay() {
   const elapsed = Date.now() - startTime;
-  const formattedTime = formatTime(elapsed);
+  const formattedTime = formatTime(elapsed + accumulatedTime);
   display.textContent = formattedTime;
 }
 
