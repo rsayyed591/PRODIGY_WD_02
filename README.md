@@ -37,6 +37,9 @@ This Stopwatch App is a basic implementation and is open for contributions and i
 ---
 
 Developed by Rehan Sayyed
+
 LinkedIn: https://www.linkedin.com/in/rehan42/
+
 GitHub: https://github.com/rsayyed591
+
 HackerRank: https://www.hackerrank.com/rehansayyed591?hr_r=1
