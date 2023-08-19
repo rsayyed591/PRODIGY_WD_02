@@ -28,7 +28,8 @@ The Stopwatch App is a simple web application that allows users to measure time 
 
 ## Preview
 
-![Stopwatch App Preview](https://ibb.co/7VZpTwx, https://ibb.co/yBBMLRp)
+![Website Preview](https://i.ibb.co/82fxRWn/1.png)
+![Website Preview](https://i.ibb.co/vvvr2Bh/2.png)
 
 ## Contributions
 
